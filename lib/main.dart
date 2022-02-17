@@ -6,14 +6,9 @@ void main() {
   runApp(App());
 }
 
-class App extends StatefulWidget {
-  App({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
-  @override
-  State<App> createState() => _AppState();
-}
-
-class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,8 +16,11 @@ class _AppState extends State<App> {
       home: Scaffold(
         backgroundColor: white,
         body: Center(
-          //generate the QR code by entering whatever data here
-          child: PrettyQr(data: 'enter data here'),
+          child: PrettyQr(
+            typeNumber: 5,
+            size: 300,
+            data: 'torontocandles.com',
+          ),
         ),
       ),
     );
